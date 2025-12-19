@@ -58,6 +58,14 @@
             color: #444;
             line-height: 1.6;
         }
+
+        #mensagemFinal {
+            display: none;
+            margin-top: 25px;
+            font-size: 20px;
+            color: #e63946;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -68,24 +76,26 @@
     <h1>Bruna Raquel Rogério Diniz</h1>
 
     <p>
-        Esse trabalho não me custou nada se vai significar seu sorriso
+        Esse trabalho não me custou nada se vai significar seu sorriso.
     </p>
 
-    <button onclick="mostrarSurpresa()">Diga sim pra mim</button>
+    <button id="botao" onclick="mostrarSurpresa()">Diga sim pra mim</button>
 
     <div id="surpresa">
-        Todos os dias eu agradeço a Deus pela chance de te amar.<br><br>
+        Todos os dias, eu cultivo meus pensamentos em gratidão pela dádiva de te amar.<br><br>
 
-        O amor que eu sinto por você é tão grande que não cabe no meu peito.<br><br>
+O amor que nutro por você cresceu de tal forma que o meu peito já não consegue mais contê-lo. É um sentimento que transborda e me completa.<br><br>
 
-        Fui tolo por não perceber antes que a pessoa certa sempre esteve ao meu lado,
-        enquanto eu desperdiçava energia com amizades que não eram leais, sua companhia é algo único na minha vida,  onde eu quero para sempre viver sob o mesmo telhado que você...<br><br>
+Sei que, demorei a enxergar o óbvio: a pessoa certa sempre esteve aqui, ao meu lado, enquanto eu dedicava minha atenção ou passividade a laços que não mereciam os meus olhos, e eu imploro  pelo seu perdão. Sua presença é o tesouro mais raro da minha vida, e meu maior desejo é que possamos, finalmente, dividir o mesmo teto e o mesmo destino.<br><br>
 
-        Hoje, tudo o que eu desejo é construir uma história ao seu lado,
-        fazer nosso amor eterno e te ver feliz, todos os dias.
+Hoje, meu único propósito é entrelaçar minha história à sua, eternizar o nosso afeto e ser o motivo do seu sorriso, todos os dias. Que o meu amor te ilumine, que o nosso amor viva, que seu amor me leve de volta para casa.
     </div>
 
-    <audio id="musica" style="margin-top:20px; width:100%;">
+    <div id="mensagemFinal">
+        Eu te amo.
+    </div>
+
+    <audio id="musica">
         <source src="diga-sim-pra-mim.mp3" type="audio/mpeg">
         Seu navegador não suporta áudio.
     </audio>
@@ -93,12 +103,20 @@
 </div>
 
 <script>
+    let clicado = false;
+
     function mostrarSurpresa() {
+        if (clicado) return;
+
         document.getElementById("surpresa").style.display = "block";
+        document.getElementById("mensagemFinal").style.display = "block";
 
         const musica = document.getElementById("musica");
         musica.volume = 1.0;
         musica.play();
+
+        document.getElementById("botao").innerText = "Sempre você";
+        clicado = true;
     }
 </script>
 
