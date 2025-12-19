@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Para Bruna ❤️</title>
+    <title>Para o meu destino</title>
 
     <style>
         body {
@@ -17,7 +17,7 @@
         }
 
         .card {
-            background: white;
+            background: black;
             padding: 40px;
             max-width: 520px;
             text-align: center;
@@ -58,11 +58,6 @@
             background: #e63946;
             color: white;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #c92c3a;
         }
 
         #surpresa {
@@ -78,42 +73,47 @@
 
 <body>
 
-    <div class="card">
+<div class="card">
 
-        <h1>Bruna Raquel Rogério Diniz ❤️</h1>
+    <h1>Bruna Raquel Rogério Diniz </h1>
 
-        <p>
-            Fiz esse pequeno site só para te lembrar
-            do quanto você é importante para mim.
-        </p>
+    <p>
+        Fiz esse pequeno site só para te lembrar
+        do quanto você é importante para mim.
+    </p>
 
-        <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
 
-        <button onclick="mostrarSurpresa()">Clique aqui 💌</button>
+    <button onclick="mostrarSurpresa()">Diga sim pra mim 💌</button>
 
-        <div id="surpresa">
-            Todos os dias eu agradeço a Deus pela chance de te amar.<br><br>
-            O amor que eu sinto por você é tão grande que não cabe no meu peito.<br><br>
-            Fui tolo por não perceber antes que a pessoa certa sempre esteve ao meu lado,
-            enquanto eu me perdia com amizades que não eram leais.<br><br>
-            Hoje eu só desejo que o nosso amor seja eterno
-            e fazer de você a mulher mais feliz do mundo.
-        </div>
-
-        <!-- Música -->
-        <audio id="musica">
-            <source src="diga-sim-pra-mim.mp3" type="audio/mpeg">
-            Seu navegador não suporta áudio.
-        </audio>
-
+    <div id="surpresa">
+        Todos os dias eu agradeço a Deus pela chance de te amar.<br><br>
+        O amor que eu sinto por você é tão grande que não cabe no meu peito.<br><br>
+        Fui tolo por não perceber antes que a pessoa certa sempre esteve ao meu lado,
+        enquanto eu me perdia com amizades que não eram leais.<br><br>
+        Hoje eu só desejo que o nosso amor seja eterno
+        e fazer de você a mulher mais feliz do mundo.
     </div>
 
-    <script>
-        function mostrarSurpresa() {
-            document.getElementById("surpresa").style.display = "block";
-            document.getElementById("musica").play();
-        }
-    </script>
+    <!-- Áudio -->
+    <audio id="musica" preload="auto">
+        <source src="diga-sim-pra-mim.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+    function mostrarSurpresa() {
+        document.getElementById("surpresa").style.display = "block";
+
+        const musica = document.getElementById("musica");
+        musica.volume = 1.0;
+
+        musica.play().catch(() => {
+            alert("Toque novamente no botão para ouvir a música ❤️");
+        });
+    }
+</script>
 
 </body>
 </html>
