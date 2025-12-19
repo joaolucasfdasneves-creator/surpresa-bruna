@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Para o meu destino</title>
+    <title>Para o meu destino.</title>
 
     <style>
         body {
@@ -17,7 +17,7 @@
         }
 
         .card {
-            background: black;
+            background: white;
             padding: 40px;
             max-width: 520px;
             text-align: center;
@@ -31,22 +31,9 @@
         }
 
         p {
-            color: #444;
+            color: #333;
             font-size: 18px;
             line-height: 1.6;
-        }
-
-        .heart {
-            font-size: 50px;
-            color: #e63946;
-            animation: pulse 1.5s infinite;
-            margin: 20px 0;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
         }
 
         button {
@@ -60,12 +47,15 @@
             cursor: pointer;
         }
 
+        button:hover {
+            background: #c92d3a;
+        }
+
         #surpresa {
             display: none;
             margin-top: 25px;
             font-size: 18px;
-            color: #e63946;
-            font-weight: bold;
+            color: #444;
             line-height: 1.6;
         }
     </style>
@@ -75,29 +65,29 @@
 
 <div class="card">
 
-    <h1>Bruna Raquel Rogério Diniz </h1>
+    <h1>Bruna Raquel Rogério Diniz</h1>
 
     <p>
-        Fiz esse pequeno site só para te lembrar
-        do quanto você é importante para mim.
+        Esse trabalho não me custou nada se vai significar seu sorriso
     </p>
 
-    <div class="heart">❤️</div>
-
-    <button onclick="mostrarSurpresa()">Diga sim pra mim 💌</button>
+    <button onclick="mostrarSurpresa()">Diga sim pra mim</button>
 
     <div id="surpresa">
         Todos os dias eu agradeço a Deus pela chance de te amar.<br><br>
+
         O amor que eu sinto por você é tão grande que não cabe no meu peito.<br><br>
+
         Fui tolo por não perceber antes que a pessoa certa sempre esteve ao meu lado,
-        enquanto eu me perdia com amizades que não eram leais.<br><br>
-        Hoje eu só desejo que o nosso amor seja eterno
-        e fazer de você a mulher mais feliz do mundo.
+        enquanto eu desperdiçava energia com amizades que não eram leais, sua companhia é algo único na minha vida,  onde eu quero para sempre viver sob o mesmo telhado que você...<br><br>
+
+        Hoje, tudo o que eu desejo é construir uma história ao seu lado,
+        fazer nosso amor eterno e te ver feliz, todos os dias.
     </div>
 
-    <!-- Áudio -->
-    <audio id="musica" preload="auto">
+    <audio id="musica" style="margin-top:20px; width:100%;">
         <source src="diga-sim-pra-mim.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
     </audio>
 
 </div>
@@ -108,10 +98,7 @@
 
         const musica = document.getElementById("musica");
         musica.volume = 1.0;
-
-        musica.play().catch(() => {
-            alert("Toque novamente no botão para ouvir a música ❤️");
-        });
+        musica.play();
     }
 </script>
 
